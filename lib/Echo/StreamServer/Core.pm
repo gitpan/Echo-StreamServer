@@ -20,7 +20,7 @@ our @ISA = qw(Exporter);
 # Export the Core API Subroutines.
 our @EXPORT = qw(send_request);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # ======================================================================
 # Toggle DEBUG flag to print to STDERR.
@@ -83,7 +83,8 @@ sub get_server_error {
 	my $err_str = $response->status_line;
 	eval {
 		my $err_hash_ref = decode_json($response->content());
-		$err_str = "[" . $err_hash_ref->{errorCode} . "] " . $err_hash_ref->{'errorMessage'};
+		$err_str = "[" . ($err_hash_ref->{errorCode} or 'fatal_error') . "] "
+			. ($err_hash_ref->{'errorMessage'} or 'no message');
 
 		if ($DEBUG) { print STDERR "JSON Error Codes: " . Dumper($err_hash_ref) . "\n"; }
 	};

@@ -8,7 +8,7 @@ use Echo::StreamServer::Client;
 our @ISA = ( 'Echo::StreamServer::Client' );
 
 use Echo::StreamServer::Core;
-$Echo::StreamServer::Core::DEBUG=1;
+$Echo::StreamServer::Core::DEBUG=0;
 
 our $VERSION = '0.01';
 
