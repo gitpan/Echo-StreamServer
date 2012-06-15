@@ -20,7 +20,7 @@ our @ISA = qw(Exporter);
 # Export the Core API Subroutines.
 our @EXPORT = qw(send_request);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # ======================================================================
 # Toggle DEBUG flag to print to STDERR.
