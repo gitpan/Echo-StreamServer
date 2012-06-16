@@ -12,6 +12,7 @@ WriteMakefile(
 				"JSON" => 2.17,
 				"LWP::UserAgent" => 2.033,
 				"Storable" => 2.15,
+				"Term::ReadLine::Gnu" => 1.20,
 				"URI" => 1.35,
 				"URI::Escape" => 3.28,
 			}, # e.g., Module::Name => 1.1

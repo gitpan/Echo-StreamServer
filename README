@@ -1,4 +1,4 @@
-Echo-StreamServer-Client version 0.02
+Echo-StreamServer-Client version 0.04
 =====================================
 
 This is a PERL version of the Echo StreamServer API.
@@ -32,6 +32,7 @@ This module requires these other modules and libraries:
    JSON
    LWP::UserAgent
    Storable
+   Term::ReadLine::Gnu
    URI
    URI::Escape
 

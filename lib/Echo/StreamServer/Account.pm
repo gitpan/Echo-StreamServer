@@ -25,6 +25,11 @@ sub new {
 	return $obj;
 }
 
+sub name {
+	my $self = shift;
+	return "(StreamServer Account: appkey=" . $self->{'appkey'} . ")";
+}
+
 1;
 __END__
 
