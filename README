@@ -32,9 +32,15 @@ This module requires these other modules and libraries:
    JSON
    LWP::UserAgent
    Storable
-   Term::ReadLine::Gnu
+   Term::ReadLine >= 1.02
+   Term::ReadLine::Gnu >= 1.20
    URI
    URI::Escape
+
+READLINE SUPPORT FOR EQLShell
+
+The Term::ReadLine module alone does not provide true ReadLine support, edit keys and history.
+Another readline module such as Term::ReadLine::Gnu (shown avbove) must be installed *manually*.
 
 COPYRIGHT AND LICENCE
 

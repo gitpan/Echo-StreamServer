@@ -6,13 +6,13 @@ WriteMakefile(
     NAME              => 'Echo::StreamServer',
     VERSION_FROM      => 'lib/Echo/StreamServer/Core.pm', # finds $VERSION
     PREREQ_PM         => {
-				"Data::Dumper" => 2.121_08,
+				"Data::Dumper" => 2.121,
 				"HTTP::Headers" => 1.64,
 				"HTTP::Request" => 1.40,
 				"JSON" => 2.17,
 				"LWP::UserAgent" => 2.033,
 				"Storable" => 2.15,
-				"Term::ReadLine::Gnu" => 1.20,
+				"Term::ReadLine" => 1.02,
 				"URI" => 1.35,
 				"URI::Escape" => 3.28,
 			}, # e.g., Module::Name => 1.1

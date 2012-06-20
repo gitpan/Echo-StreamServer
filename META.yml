@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Echo-StreamServer
-version:            0.04
+version:            0.06
 abstract:           This is a PERL version of the Echo StreamServer API.
 author:
     - Andrew Droffner <adroffne@advance.net>
@@ -11,15 +11,15 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    Data::Dumper:         2.12108
-    HTTP::Headers:        1.64
-    HTTP::Request:        1.4
-    JSON:                 2.17
-    LWP::UserAgent:       2.033
-    Storable:             2.15
-    Term::ReadLine::Gnu:  1.2
-    URI:                  1.35
-    URI::Escape:          3.28
+    Data::Dumper:    2.121
+    HTTP::Headers:   1.64
+    HTTP::Request:   1.4
+    JSON:            2.17
+    LWP::UserAgent:  2.033
+    Storable:        2.15
+    Term::ReadLine:  1.02
+    URI:             1.35
+    URI::Escape:     3.28
 no_index:
     directory:
         - t
