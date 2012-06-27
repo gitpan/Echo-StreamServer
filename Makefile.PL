@@ -5,6 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Echo::StreamServer',
     VERSION_FROM      => 'lib/Echo/StreamServer/Core.pm', # finds $VERSION
+    EXE_FILES         => [ 'eql_shell.pl' ], # cmd line scripts
     PREREQ_PM         => {
 				"Data::Dumper" => 2.121,
 				"HTTP::Headers" => 1.64,

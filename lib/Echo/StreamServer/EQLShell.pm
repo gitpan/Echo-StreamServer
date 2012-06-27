@@ -15,7 +15,7 @@ our @ISA = qw(
 use Term::ReadLine;
 use Data::Dumper;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub _history_file {
 	my $self = shift;
@@ -32,6 +32,7 @@ sub _intro {
 	my ($self, $term) = @_;
 	my $acct = $self->{'account'}->name;
 	my $rl_support = $term->ReadLine;
+	my $help_text = $self->_help;
 
 	my $INTRO_TEXT=<<"INTRO";
 
@@ -46,13 +47,25 @@ Prompts:
 SEARCH> "This prompt means execute a search."
 COUNT>  "This prompt means execute a count."
 
+$help_text
+
+HELP: Show help text.
+
+INTRO
+
+}
+
+sub _help {
+	# Help Text
+	my ($self, $cmd_name) = @_;
+
+	my $HELP_TEXT=<<"HELP";
 Shell Commands
 COUNT:  Set to COUNT> mode.
 SEARCH: Set to SEARCH> mode.
 USERS:  Set to USERS> mode.
-QUIT:   Quit the shell.
-
-INTRO
+QUIT:   Quit (or EXIT) the shell.
+HELP
 
 }
 
@@ -89,6 +102,12 @@ sub start {
 		# Skip empty lines.
 		next if ($shell_input =~ m/^\s*$/);
 
+		# HELP Text:
+		if ($shell_input =~ m/^\s*HELP\s*$/i) {
+			print $self->_help;
+			next;
+		}
+
 		# Shell Commands:
 		if (grep(m/^\s*$shell_input\s*$/i, @cmd_mode_list)) {
 			$self->{'cmd_mode'} = uc($shell_input);
@@ -97,6 +116,7 @@ sub start {
 
 		# QUIT Shell:
 		last if ($shell_input =~ m/^\s*QUIT\s*$/i);
+		last if ($shell_input =~ m/^\s*EXIT\s*$/i);
 
 		$term->addhistory($shell_input) if ($shell_input =~ m/\S/);
 

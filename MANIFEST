@@ -12,5 +12,6 @@ lib/Echo/StreamServer/KVS.pm
 lib/Echo/StreamServer/MuxRequest.pm
 lib/Echo/StreamServer/Settings.pm
 lib/Echo/StreamServer/Users.pm
+eql_shell.pl
 t/client.t
 META.yml                                 Module meta-data (added by MakeMaker)

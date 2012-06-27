@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Echo-StreamServer
-version:            0.06
+version:            0.07
 abstract:           This is a PERL version of the Echo StreamServer API.
 author:
     - Andrew Droffner <adroffne@advance.net>
